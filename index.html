@@ -168,30 +168,53 @@
   .steps p{font-size:15px;color:var(--ink-soft);line-height:1.65}
 
   /* contact */
-  .contact .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:72px}
-  .contact h2{font-family:var(--serif);font-weight:700;font-size:clamp(28px,3.4vw,38px);line-height:1.35;letter-spacing:-.02em;margin-bottom:20px}
-  .contact-lead{color:var(--ink-soft);margin-bottom:40px;max-width:28em}
-  .info{border-top:2px solid var(--ink)}
-  .info div{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule);font-size:16px}
-  .info dt{color:var(--ink-soft)}
-  .info dd a{text-decoration:none;border-bottom:1px solid var(--rule)}
-  .info dd a:hover{border-color:var(--ink)}
+  .contact-head{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:end;margin-bottom:56px}
+  .contact h2{font-family:var(--serif);font-weight:700;font-size:clamp(28px,3.4vw,38px);line-height:1.35;letter-spacing:-.02em}
+  .contact-lead{color:var(--ink-soft);max-width:36em}
+  .contact-body{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 
-  form{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:36px}
-  .field{margin-bottom:20px}
-  .field label{display:block;font-size:14px;font-weight:600;margin-bottom:8px}
+  #consult{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:36px}
+  .field{margin-bottom:22px}
+  .field label{display:block;font-size:15px;font-weight:600;margin-bottom:8px}
+  .req{color:var(--seal)}
+  .hint{font-weight:400;color:var(--ink-soft);font-size:14px}
   .field input,.field select,.field textarea{
     width:100%;font:16px/1.5 var(--sans);color:var(--ink);
-    padding:12px 14px;border:1px solid #B7C2BC;border-radius:4px;background:var(--paper);
+    padding:13px 14px;border:1px solid #B7C2BC;border-radius:4px;background:var(--paper);
   }
   .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--pine);outline-offset:0;border-color:var(--pine);background:#fff}
-  .field textarea{min-height:140px;resize:vertical}
+  .field [aria-invalid="true"]{border-color:var(--seal);background:#FBF1EF}
+  .field textarea{min-height:200px;resize:vertical}
+  .counter{text-align:right;font-size:13px;color:var(--ink-soft);margin-top:6px;font-variant-numeric:tabular-nums}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .agree{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink-soft);margin:6px 0 24px}
-  .agree input{margin-top:5px;accent-color:var(--pine);width:16px;height:16px;flex:none}
-  form .btn{width:100%;padding:16px}
-  .form-note{font-size:13px;color:var(--ink-soft);margin-top:14px;text-align:center}
-  .form-msg{font-size:14px;color:var(--seal);margin-top:12px;min-height:1.4em}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .agree{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:15px;color:var(--ink);margin:4px 0 26px}
+  .agree input{accent-color:var(--pine);width:18px;height:18px;flex:none}
+  .link-btn{background:none;border:0;padding:0;font:inherit;font-size:14px;color:var(--pine);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+  .submit{min-width:180px;padding:16px 28px}
+  .submit[disabled]{opacity:.6;cursor:progress}
+  .form-result{margin-top:20px;padding:18px 20px;border-radius:4px;font-size:15px;line-height:1.7;border:1px solid var(--pine);background:#EAF0EC;color:var(--pine-deep)}
+  .form-result.error{border-color:var(--seal);background:#FBF1EF;color:#7E271E}
+  .form-result a{font-weight:600}
+
+  .info{border-top:2px solid var(--ink)}
+  .info div{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule);font-size:16px}
+  .info dt{color:var(--pine);font-weight:600}
+  .info dd a{text-decoration:none;border-bottom:1px solid var(--rule)}
+  .info dd a:hover{border-color:var(--ink)}
+  .map{margin-top:28px;border:1px solid var(--rule);border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:var(--paper-2)}
+  .map iframe{width:100%;height:100%;border:0;display:block}
+  .map-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:16px;font-size:15px;font-weight:600}
+  .map-links a{text-decoration:none;border-bottom:1.5px solid var(--ink);padding-bottom:2px}
+  .map-links a:hover{color:var(--pine);border-color:var(--pine)}
+
+  dialog{border:0;border-radius:8px;padding:32px;max-width:520px;width:calc(100% - 40px);color:var(--ink);box-shadow:0 20px 60px rgba(20,30,28,.25)}
+  dialog::backdrop{background:rgba(24,48,42,.5)}
+  dialog h3{font-family:var(--serif);font-size:22px;margin-bottom:18px}
+  .policy{border-top:2px solid var(--ink);margin-bottom:24px}
+  .policy div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:15px;line-height:1.65}
+  .policy dt{font-weight:600;color:var(--pine)}
+  dialog form{text-align:right}
 
   /* footer */
   footer{background:var(--ink);color:#AEB8B3;font-size:14px;padding:48px 0 56px}
@@ -218,7 +241,8 @@
     .steps{grid-template-columns:1fr 1fr}
     .steps li,.steps li + li{padding:24px 20px 20px 0;border-left:0;border-bottom:1px solid var(--rule)}
     .steps li:nth-child(even){padding-left:20px;border-left:1px solid var(--rule)}
-    .contact .wrap{grid-template-columns:1fr;gap:48px}
+    .contact-head{grid-template-columns:1fr;gap:16px}
+    .contact-body{grid-template-columns:1fr;gap:48px}
   }
   @media (max-width:640px){
     body{font-size:16px}
@@ -232,7 +256,9 @@
     .timeline li{grid-template-columns:1fr;gap:2px}
     .steps{grid-template-columns:1fr}
     .steps li:nth-child(even){padding-left:0;border-left:0}
-    form{padding:24px}
+    #consult{padding:24px}
+    .policy div{grid-template-columns:1fr;gap:2px}
+    .submit{width:100%}
     .foot-right{text-align:left}
   }
   @media (prefers-reduced-motion:reduce){
@@ -460,55 +486,90 @@
   <!-- CONTACT -->
   <section id="contact" class="block contact" aria-labelledby="contact-title">
     <div class="wrap">
-      <div>
-        <h2 id="contact-title">상담 신청</h2>
-        <p class="contact-lead">내용을 남겨 주시면 확인 후 연락드립니다. 기한이 임박한 사안은 전화로 먼저 연락 주세요.</p>
-        <dl class="info">
-          <div><dt>이메일</dt><dd><a href="mailto:9279tax@gmail.com">9279tax@gmail.com</a></dd></div>
-          <div><dt>전화</dt><dd><a href="tel:050714919279">0507-1491-9279</a></dd></div>
-          <div><dt>팩스</dt><dd>0508-926-9279</dd></div>
-          <div><dt>주소</dt><dd>(11931) 경기도 구리시 검배공원로 5, 1층 1호<br>(수택동, 검배공영주차장)</dd></div>
-          <div><dt>상담시간</dt><dd>평일 09:30 – 17:30</dd></div>
-          <div><dt>블로그</dt><dd><a href="https://blog.naver.com/0707tax" target="_blank" rel="noopener">blog.naver.com/0707tax</a></dd></div>
-        </dl>
+      <div class="contact-head">
+        <h2 id="contact-title">상담 문의</h2>
+        <p class="contact-lead">사안과 연락처를 남겨 주시면 마준성 세무사가 직접 확인하고 연락드립니다. 기한이 임박한 사안은 전화로 먼저 연락 주세요.</p>
       </div>
 
-      <form id="consult" novalidate>
-        <div class="row2">
-          <div class="field">
-            <label for="f-name">성함 또는 회사명</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" required>
+      <div class="contact-body">
+        <form id="consult" novalidate>
+          <div class="row2">
+            <div class="field">
+              <label for="f-name">성함 <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-name" name="성함" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="f-phone">연락처 <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-phone" name="연락처" type="tel" autocomplete="tel" inputmode="tel" placeholder="010-0000-0000" required>
+            </div>
           </div>
           <div class="field">
-            <label for="f-phone">연락처</label>
-            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            <label for="f-email">이메일</label>
+            <input id="f-email" name="이메일" type="email" autocomplete="email" inputmode="email">
           </div>
+          <div class="field">
+            <label for="f-type">업무 종류</label>
+            <select id="f-type" name="업무 종류">
+              <option>조세불복</option>
+              <option>경정청구·예규질의</option>
+              <option>세무조사 대응</option>
+              <option>세무자문</option>
+              <option>재산제세 (양도·상속·증여 등)</option>
+              <option>기장·신고 대리</option>
+              <option>기타</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">내용 <span class="hint">(5,000자 이내)</span></label>
+            <textarea id="f-msg" name="내용" maxlength="5000" placeholder="현재 상황, 받으신 통지서 종류, 기한 등을 적어 주시면 더 정확히 안내드릴 수 있습니다."></textarea>
+            <p class="counter" aria-live="off"><span id="f-count">0</span> / 5,000</p>
+          </div>
+          <!-- 스팸 방지용 숨김 필드 -->
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="agree">
+            <input id="f-agree" type="checkbox" required>
+            <label for="f-agree">상담을 위한 개인정보 수집·이용에 동의합니다.</label>
+            <button type="button" class="link-btn" id="open-privacy">내용 보기</button>
+          </div>
+
+          <button class="btn btn-solid submit" type="submit" id="f-submit">상담 신청</button>
+          <div class="form-result" id="form-result" role="status" aria-live="polite" hidden></div>
+        </form>
+
+        <div class="contact-side">
+          <dl class="info">
+            <div><dt>전화</dt><dd><a href="tel:050714919279">0507-1491-9279</a></dd></div>
+            <div><dt>팩스</dt><dd>0508-926-9279</dd></div>
+            <div><dt>이메일</dt><dd><a href="mailto:9279tax@gmail.com">9279tax@gmail.com</a></dd></div>
+            <div><dt>주소</dt><dd>(11931) 경기도 구리시 검배공원로 5, 1층 1호<br>(수택동, 검배공영주차장)</dd></div>
+            <div><dt>상담시간</dt><dd>평일 09:30 – 17:30</dd></div>
+            <div><dt>블로그</dt><dd><a href="https://blog.naver.com/0707tax" target="_blank" rel="noopener">blog.naver.com/0707tax</a></dd></div>
+          </dl>
+
+          <div class="map">
+            <iframe title="세무회계 예현 위치 지도" src="https://maps.google.com/maps?q=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EA%B2%80%EB%B0%B0%EA%B3%B5%EC%9B%90%EB%A1%9C%205&amp;hl=ko&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+          <p class="map-links">
+            <a href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EA%B2%80%EB%B0%B0%EA%B3%B5%EC%9B%90%EB%A1%9C%205" target="_blank" rel="noopener">네이버지도에서 보기</a>
+            <a href="https://map.kakao.com/?q=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EA%B2%80%EB%B0%B0%EA%B3%B5%EC%9B%90%EB%A1%9C%205" target="_blank" rel="noopener">카카오맵에서 보기</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EA%B5%AC%EB%A6%AC%EC%8B%9C%20%EA%B2%80%EB%B0%B0%EA%B3%B5%EC%9B%90%EB%A1%9C%205" target="_blank" rel="noopener">구글 지도에서 보기</a>
+          </p>
         </div>
-        <div class="field">
-          <label for="f-type">상담 분야</label>
-          <select id="f-type" name="type">
-            <option>기장·신고 대리</option>
-            <option>세무조사 대응</option>
-            <option>상속·증여</option>
-            <option>양도소득세</option>
-            <option>법인 설립·세무자문</option>
-            <option>조세불복</option>
-            <option>기타·잘 모르겠음</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="f-msg">상담 내용</label>
-          <textarea id="f-msg" name="message" placeholder="현재 상황과 궁금한 점을 적어 주세요." required></textarea>
-        </div>
-        <label class="agree">
-          <input id="f-agree" type="checkbox" required>
-          <span>상담 회신을 위해 성함, 연락처, 상담 내용을 수집하며, 상담 종료 후 지체 없이 파기합니다. 이에 동의합니다.</span>
-        </label>
-        <button class="btn btn-solid" type="submit">메일로 상담 신청 보내기</button>
-        <p class="form-msg" id="form-msg" role="alert" aria-live="polite"></p>
-        <p class="form-note">버튼을 누르면 작성하신 내용이 담긴 메일 창이 열립니다.</p>
-      </form>
+      </div>
     </div>
+
+    <dialog id="privacy" aria-labelledby="privacy-title">
+      <h3 id="privacy-title">개인정보 수집·이용 안내</h3>
+      <dl class="policy">
+        <div><dt>수집 항목</dt><dd>필수: 성함, 연락처<br>선택: 이메일, 상담 내용</dd></div>
+        <div><dt>수집·이용 목적</dt><dd>상담 신청 확인 및 회신</dd></div>
+        <div><dt>보유·이용 기간</dt><dd>상담 종료 후 지체 없이 파기합니다. 다만 업무를 수임한 경우에는 관계 법령에서 정한 기간 동안 보관합니다.</dd></div>
+        <div><dt>전송 방식</dt><dd>작성하신 내용은 메일 전송 서비스(FormSubmit)를 거쳐 세무회계 예현의 이메일로 전달됩니다.</dd></div>
+        <div><dt>동의 거부 권리</dt><dd>동의를 거부하실 수 있으며, 이 경우 온라인 상담 신청은 할 수 없습니다. 전화나 이메일로는 상담하실 수 있습니다.</dd></div>
+      </dl>
+      <form method="dialog"><button class="btn btn-solid" type="submit">닫기</button></form>
+    </dialog>
   </section>
 
 </main>
@@ -535,26 +596,69 @@
 
 <script>
   (function(){
+    var ENDPOINT = 'https://formsubmit.co/ajax/9279tax@gmail.com';
+    var PHONE = '0507-1491-9279';
     var form = document.getElementById('consult');
-    var msg = document.getElementById('form-msg');
+    var result = document.getElementById('form-result');
+    var submit = document.getElementById('f-submit');
+    var msg = document.getElementById('f-msg');
+    var count = document.getElementById('f-count');
+    var dlg = document.getElementById('privacy');
+
+    msg.addEventListener('input', function(){ count.textContent = msg.value.length.toLocaleString(); });
+    document.getElementById('open-privacy').addEventListener('click', function(){
+      if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+    });
+
+    function show(html, isError){
+      result.innerHTML = html;
+      result.className = 'form-result' + (isError ? ' error' : '');
+      result.hidden = false;
+    }
+    function mark(el, bad){ el.setAttribute('aria-invalid', bad ? 'true' : 'false'); }
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      var name = form.name.value.trim();
-      var phone = form.phone.value.trim();
-      var body = form.message.value.trim();
-      if(!name || !phone || !body){
-        msg.textContent = '성함, 연락처, 상담 내용을 모두 입력해 주세요.';
-        return;
-      }
-      if(!document.getElementById('f-agree').checked){
-        msg.textContent = '개인정보 수집에 동의해 주셔야 상담 신청을 보낼 수 있습니다.';
-        return;
-      }
-      msg.textContent = '';
-      var type = form.type.value;
-      var subject = '[상담 신청] ' + type + ' - ' + name;
-      var text = '성함/회사명: ' + name + '\n연락처: ' + phone + '\n상담 분야: ' + type + '\n\n' + body;
-      window.location.href = 'mailto:9279tax@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text);
+      var name = form.elements['성함'], phone = form.elements['연락처'], email = form.elements['이메일'];
+      var agree = document.getElementById('f-agree');
+      var missing = [];
+      mark(name, !name.value.trim()); if (!name.value.trim()) missing.push('성함');
+      mark(phone, !phone.value.trim()); if (!phone.value.trim()) missing.push('연락처');
+      var emailBad = email.value.trim() && !email.checkValidity();
+      mark(email, emailBad);
+      if (missing.length){ show('필수 항목(' + missing.join(', ') + ')을 입력해 주세요.', true); (missing[0]==='성함'?name:phone).focus(); return; }
+      if (emailBad){ show('이메일 주소 형식을 확인해 주세요.', true); email.focus(); return; }
+      if (!agree.checked){ show('개인정보 수집·이용에 동의해 주셔야 상담을 신청할 수 있습니다.', true); agree.focus(); return; }
+      if (form.elements['_honey'].value) return;
+
+      var type = form.elements['업무 종류'].value;
+      var payload = {
+        '성함': name.value.trim(),
+        '연락처': phone.value.trim(),
+        '이메일': email.value.trim() || '(미입력)',
+        '업무 종류': type,
+        '내용': msg.value.trim() || '(미입력)',
+        '_subject': '[홈페이지 상담 신청] ' + type + ' - ' + name.value.trim(),
+        '_template': 'table',
+        '_captcha': 'false'
+      };
+      if (email.value.trim()) payload['_replyto'] = email.value.trim();
+
+      submit.disabled = true; submit.textContent = '보내는 중';
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify(payload)
+      }).then(function(r){ return r.json().then(function(d){ return {ok:r.ok, d:d}; }); })
+        .then(function(res){
+          if (!res.ok || String(res.d.success) !== 'true') throw new Error('fail');
+          form.reset(); count.textContent = '0';
+          show('상담 신청이 접수되었습니다. 마준성 세무사가 확인 후 연락드리겠습니다. 급한 사안은 <a href="tel:050714919279">' + PHONE + '</a>로 전화 주세요.', false);
+        })
+        .catch(function(){
+          show('상담 신청을 보내지 못했습니다. 잠시 후 다시 시도하시거나 <a href="tel:050714919279">' + PHONE + '</a> 또는 <a href="mailto:9279tax@gmail.com">9279tax@gmail.com</a>으로 연락 주세요.', true);
+        })
+        .then(function(){ submit.disabled = false; submit.textContent = '상담 신청'; });
     });
   })();
 </script>
